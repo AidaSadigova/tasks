@@ -297,13 +297,4 @@ main(){
     }else{
       stdout.writeln("You didn't choose anything. Please choose a T-shirt which you want to buy......");
     }
-
-
-
-
-
-
-
-
-
 }
