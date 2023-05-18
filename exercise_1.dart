@@ -11,3 +11,4 @@ main(){
     year=year+1;
   }
   print('Istifadecinin 100yasinin tamam olmasina $year il qalib.');
+}
