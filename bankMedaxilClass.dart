@@ -1,18 +1,25 @@
 import 'dart:io';
-main(){
-  Map<String, List<int>> costumers={
-    'John Snow': [500,200],
-    'Julia Snow': [300,130],
-  };
-  
-  costumers.forEach((key, value) { 
-    if (value.length>=2){
-      for(int i=0; i<value.length;i++ ){
-        if(value[i]>200){
-          value[i]+=10;
-        }
-      }
-    }
-  });
-  print(costumers);
+class BankHesabi{
+  late final int hesabNomresi;
+  late final String hesabAdi;
+  int hesabBalans;
+  BankHesabi({ required this.hesabAdi, required this.hesabNomresi, required this.hesabBalans});
+
+   void hesabMelumat(){
+    stdout.writeln("Name: $hesabAdi\nHesab nomresi: $hesabNomresi\nHesab Balansi: $hesabBalans");
+   }
+   void hesabaMedaxil(){
+    stdout.writeln("Ne qeder daxil etmek isteyirsizse qeyd edin...");
+    int medaxil=int.parse(stdin.readLineSync().toString());
+    hesabBalans+=medaxil;
+    print(hesabBalans);
+    stdout.writeln("Sizin cari balansiniz $hesabBalans AZN teskil edir.");
+   }
+   void hesabMexaric(){
+    stdout.writeln("Ne qeder pul cixarmaq isteyirsizse qeyd edin...");
+    int mexaric=int.parse(stdin.readLineSync().toString());
+    hesabBalans-=mexaric;
+    print(hesabBalans);
+    stdout.writeln("Sizin cari balansiniz hal-hazirda $hesabBalans AZN teskil edir.");
+   }
 }
